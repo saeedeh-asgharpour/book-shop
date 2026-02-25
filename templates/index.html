@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه کتاب</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<header class="header">
+    <div class="container header-inner">
+
+        <!-- سرچ -->
+        <div class="search-box">
+            <input type="text" placeholder="دنبال چی میگردی؟">
+                <button class="search-btn">
+                    🔍
+                </button>
+        </div>
+
+        <!-- لوگو -->
+        <div class="logo">۳۰بوک</div>
+
+        <!-- منوی سمت چپ -->
+<div class="header-menu">
+
+    <a href="#" class="menu-item">
+        <span class="icon">📰</span>
+        <span class="label">مجله</span>
+    </a>
+
+    <a href="#" class="menu-item">
+        <span class="icon">🔥</span>
+        <span class="label">تخفیف</span>
+    </a>
+
+    <a href="#" class="menu-item">
+        <span class="icon">👤</span>
+        <span class="label">ورود / ثبت‌نام</span>
+    </a>
+
+    <a href="#" class="menu-item">
+        <span class="icon">🛒</span>
+        <span class="label">سبد خرید</span>
+    </a>
+
+</div>
+
+    </div>
+</header>
+
+<nav class="category-nav">
+    <div class="container nav-inner">
+
+        <!-- بخش راست: دکمه سایدبار -->
+        <div class="menu-trigger" onclick="toggleSidebar()">
+            <span class="menu-icon">☰</span>
+            <span>دسته‌بندی</span>
+        </div>
+
+        <!-- خط جداکننده -->
+        <div class="divider"></div>
+
+        <!-- لینک‌ها -->
+        <div class="nav-links">
+            <a href="#" class="nav-item active">کتاب عمومی</a>
+            <a href="#" class="nav-item">کمک درسی</a>
+            <a href="#" class="nav-item">زبان خارجی</a>
+            <a href="#" class="nav-item">کودک و نوجوان</a>
+            <a href="#" class="nav-item">لوازم تحریر</a>
+            <a href="#" class="nav-item">فرهنگی سرگرمی</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- سایدبار -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <span onclick="toggleSidebar()" class="close-btn">✕</span>
+        <h3>دسته‌بندی‌ها</h3>
+    </div>
+
+    <ul>
+        <li>کتاب عمومی</li>
+        <li>کمک درسی</li>
+        <li>زبان خارجی</li>
+        <li>کودک و نوجوان</li>
+        <li>لوازم تحریر</li>
+        <li>فرهنگی سرگرمی</li>
+    </ul>
+</div>
+
+    <section class="main">
+
+        <div class="main__side">
+            <div class="box box-light">۳۰٪ تخفیف خرید اول</div>
+            <div class="box box-purple">الان بخر، بعداً پرداخت کن</div>
+            <div class="box box-blue">خرید تلفنی</div>
+        </div>
+
+        <div class="main__banner">
+            <div>
+                <h2>۳۰٪ تخفیف روی اکثر کتاب‌ها</h2>
+                <p>کد تخفیف: bhmn30</p>
+                <button class="btn btn-primary">مشاهده و ثبت سفارش</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="categories">
+        <div class="category">فرهنگی سرگرمی</div>
+        <div class="category">کودک و نوجوان</div>
+        <div class="category">زبان خارجی</div>
+        <div class="category">کمک درسی</div>
+        <div class="category">کتاب عمومی</div>
+        <div class="category">لوازم تحریر</div>
+    </section>
+</div>
+<!-- vitrin -->
+<section class="book-row-section">
+
+    <div class="book-row-container">
+        <div class="book-row-box">
+
+            <div class="book-row-wrapper">
+                <div class="book-row" id="bookRow">
+
+                    <!-- کارت‌ها -->
+                    <div class="book-card">
+                        <div class="discount">٪25</div>
+                        <img src="https://via.placeholder.com/150x220">
+                        <h4>نام کتاب اول</h4>
+                        <p class="publisher">نشر: صدای معاصر</p>
+                        <div class="price">
+                            <span class="new">۲۳۲,۵۰۰ تومان</span>
+                            <span class="old">۳۱۰,۰۰۰</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="discount">٪30</div>
+                        <img src="https://via.placeholder.com/150x220">
+                        <h4>کتاب دوم</h4>
+                        <p class="publisher">نشر: میلکان</p>
+                        <div class="price">
+                            <span class="new">۳۱۵,۰۰۰ تومان</span>
+                            <span class="old">۴۰۰,۰۰۰</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="discount">٪20</div>
+                        <img src="https://via.placeholder.com/150x220">
+                        <h4>کتاب سوم</h4>
+                        <p class="publisher">نشر: چشمه</p>
+                        <div class="price">
+                            <span class="new">۱۹۰,۰۰۰ تومان</span>
+                            <span class="old">۲۳۰,۰۰۰</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="discount">٪15</div>
+                        <img src="https://via.placeholder.com/150x220">
+                        <h4>کتاب چهارم</h4>
+                        <p class="publisher">نشر: ققنوس</p>
+                        <div class="price">
+                            <span class="new">۲۱۰,۰۰۰ تومان</span>
+                            <span class="old">۲۵۰,۰۰۰</span>
+                        </div>
+                    </div>
+
+                    <!-- کارت‌های اضافی برای گردش -->
+                    <div class="book-card">
+                        <div class="discount">٪35</div>
+                        <img src="https://via.placeholder.com/150x220">
+                        <h4>کتاب پنجم</h4>
+                        <p class="publisher">نشر: ثالث</p>
+                        <div class="price">
+                            <span class="new">۲۸۰,۰۰۰ تومان</span>
+                            <span class="old">۳۶۰,۰۰۰</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="control-btn" id="prevBtn"> < </button>
+                <button class="control-btn" id="nextBtn"> > </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+
+<!-- vitrin animation -->
+<script>
+const row = document.getElementById("bookRow");
+const wrapper = document.querySelector(".book-row-wrapper");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+const cards = document.querySelectorAll(".book-card");
+
+const visibleCards = 4;
+const gap = 25;
+const cardWidth = cards[0].offsetWidth + gap;
+
+let index = 0;
+let totalCards = cards.length;
+let sliderInterval;
+
+// clone اولیه
+for (let i = 0; i < visibleCards; i++) {
+    const clone = cards[i].cloneNode(true);
+    row.appendChild(clone);
+}
+
+function moveToIndex() {
+    row.style.transition = "transform 1.2s ease";
+    row.style.transform = `translateX(${index * cardWidth}px)`;
+}
+
+function nextSlide() {
+    index++;
+    moveToIndex();
+
+    if (index === totalCards) {
+        setTimeout(() => {
+            row.style.transition = "none";
+            row.style.transform = "translateX(0)";
+            index = 0;
+        }, 1200);
+    }
+}
+
+function prevSlide() {
+    if (index === 0) {
+        index = totalCards;
+        row.style.transition = "none";
+        row.style.transform = `translateX(${index * cardWidth}px)`;
+    }
+
+    setTimeout(() => {
+        index--;
+        moveToIndex();
+    }, 20);
+}
+
+function startSlider() {
+    sliderInterval = setInterval(nextSlide, 3000);
+}
+
+function stopSlider() {
+    clearInterval(sliderInterval);
+}
+
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+wrapper.addEventListener("mouseenter", stopSlider);
+wrapper.addEventListener("mouseleave", startSlider);
+
+startSlider();
+</script>
+</body>
+</html>

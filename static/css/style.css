@@ -1,0 +1,415 @@
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    direction: rtl;
+    background: #fff;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+/* ===== HEADER ===== */
+.header {
+    width: 100%;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+/* جلوگیری از بیرون زدن آیتم فلکس */
+.header-inner > * {
+    min-width: 0;
+}
+
+
+
+/* LOGO */
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: orange;
+}
+
+/* سرچ */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 15px;
+    padding: 1px 1px;
+    width: 350px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 18px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-btn {
+    width: 60px;
+    height: 40px;
+    border: none;
+    background: orange;
+    color: white;
+    border-radius: 15px 0px 0px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+/* hover */
+.search-btn:hover {
+    background: #e69500;
+}
+
+/* ===== HEADER MENU ===== */
+.header-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu-item .icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/* متن */
+.menu-item .label {
+    font-size: 12px;
+}
+
+.menu-item:hover {
+    color: orange;
+}
+
+.cart {
+    font-weight: bold;
+}
+
+
+/* BUTTON SYSTEM */
+.btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background: white;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: orange;
+    color: white;
+    border: none;
+}
+
+.btn-outline:hover {
+    background: #f5f5f5;
+}
+
+/* ===== MAIN ===== */
+.main {
+    display: flex;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+/* BANNER */
+.main__banner {
+    flex: 2;
+    background: #fcebdc;
+    border-radius: 25px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    min-height: 320px;
+}
+
+/* SIDE */
+.main__side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box {
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    min-height: 90px;
+}
+
+.box-light { background: #dff3f5; }
+.box-purple { background: #e8e0ff; }
+.box-blue { background: #d5f0ff; }
+
+/* ===== CATEGORIES ===== */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.category {
+    aspect-ratio: 1 / 1;
+    background: #e3ecf7;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.category:hover {
+    background: #cfdff5;
+}
+
+/* ===== NAVBAR ===== */
+
+.category-nav {
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+/* دکمه منو */
+.menu-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-icon {
+    font-size: 18px;
+}
+
+/* خط عمودی */
+.divider {
+    width: 1px;
+    height: 25px;
+    background: #ddd;
+}
+
+/* لینک‌ها */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    color: orange;
+}
+
+.nav-item.active {
+    color: orange;
+}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    color: orange;
+}
+
+
+/* vitrin */
+
+/* wrapper برای مخفی شدن کارت خارج شده */
+.book-row-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ردیف کارت‌ها */
+.book-row {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.6s ease;
+}
+
+/* کارت کتاب */
+.book-card {
+    background: #f4f4f4;
+    min-width: 220px;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.book-card img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.discount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff6b6b;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.publisher {
+    font-size: 12px;
+    color: gray;
+}
+
+.price .new {
+    font-weight: bold;
+}
+
+.price .old {
+    text-decoration: line-through;
+    font-size: 12px;
+    color: gray;
+    display: block;
+}
+
+/* دکمه‌های اسلایدر */
+
+
+/* بخش دکمه‌ها */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* استایل دکمه‌ها */
+.control-btn {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.control-btn:hover {
+    background: orange;
+    color: white;
+    border-color: orange;
+}
+
+/* سکشن فقط فاصله عمودی بده */
+.book-row-section {
+    padding: 60px 0;
+}
+
+/* کانتینر محدودکننده عرض */
+.book-row-container {
+    max-width: 100%;
+    margin: 0 auto;   /* وسط‌چین */
+    padding: 10 20px;  /* فاصله از کناره‌ها */
+}
+
+/* کادر کرم */
+.book-row-box {
+    background: #d8cfc3;
+    padding: 40px 100px;
+}
